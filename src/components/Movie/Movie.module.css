@@ -1,0 +1,17 @@
+.Info {
+  color: var(--secondary-txt-cl);
+}
+
+.Title {
+  margin-bottom: 0;
+}
+
+.Film {
+  width: 40%;
+}
+
+.Image {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}

@@ -1,0 +1,84 @@
+.Link {
+  list-style: none;
+  width: 280px;
+  height: 450px;
+  padding: 10px;
+  display: flex;
+  border-radius: 0px 0px 4px 4px;
+  transition: var(--animation);
+  position: relative;
+}
+
+.Image {
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.Link:hover {
+  transform: scale(1.02);
+  cursor: zoom-in;
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2); */
+}
+
+.Title {
+  font-size: 16px;
+  color: var(--main-txt-cl);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ItemInfo {
+  display: flex;
+  gap: 3px;
+  color: var(--main-txt-cl);
+  font-size: 13px;
+}
+
+.Date {
+  display: flex;
+  gap: 4px;
+}
+
+/* add button */
+.Button {
+  position: absolute;
+
+  top: 0;
+  margin-top: 15px;
+  margin-left: 14px;
+
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 60px;
+  border: none;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  width: auto;
+  max-width: 32px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
+  transition: var(--animation);
+}
+
+.Button:hover {
+  max-width: 300px;
+}
+
+.Icon {
+  font-size: 20px;
+  margin-right: 12px;
+  padding: 0px 4px;
+
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.Text {
+  white-space: nowrap;
+  padding-right: 15px;
+}

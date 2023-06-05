@@ -1,0 +1,102 @@
+import Responsive from "../components/MovieList/MovieList";
+import { useState, useEffect } from "react";
+import * as API from "../servises/api";
+import SimpleSlider from "../components/HeroSlider/HeroSlider";
+import { MoreVideos } from "../components/MoreVideosBtn/MoreVideosBtn";
+import ScrollButton from "../components/ScrollButton/ScrollButton";
+import css from "./Pages.module.css";
+// import { ToastContainer} from 'react-toastify';
+
+const Home = () => {
+  const [movies, setMovies] = useState([]);
+  const [moviesForWeek, setMoviesForWeek] = useState([]);
+  const [moviesTop, setMoviesTop] = useState([]);
+  const [allGenres, setGenres] = useState([]);
+
+  //Функція для отримання списку жанрів при маунті компонента
+  useEffect(() => {
+    API.fetchGenres().then((response) => {
+      const movieGenres = response.genres;
+      console.log("movieGenres", movieGenres);
+      setGenres(movieGenres);
+    });
+  }, []);
+
+  useEffect(() => {
+    API.fetchPopularMoviesForDay()
+      .then((response) => {
+        //   if (movies.hits.length === 0) {
+        //     alert('no matching results');
+        //   }
+        //   console.log(response.results);
+        setMovies(response.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    API.fetchPopularMoviesForWeek()
+      .then((response) => {
+        setMoviesForWeek(response.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    API.fetchTopRatedMovies()
+      .then((response) => {
+        setMoviesTop(response.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const heroMoviesArr = movies.slice(0, 5);
+
+  return (
+    <div>
+      <section className="Hero">
+        <SimpleSlider movies={heroMoviesArr} />
+      </section>
+
+      <section className={css.Section}>
+        <div className={css.SliderContainer}>
+          <h2 className={css.SectionTitle}>Trending today</h2>
+          <Responsive movies={movies} genres={allGenres} />
+        </div>
+      </section>
+
+      <section
+        style={{
+          backgroundColor: "#f7f3f3",
+        }}
+        className={css.Section}
+      >
+        <div className={css.SliderContainer}>
+          <h2 className={css.SectionTitle}>Trending this week</h2>
+          <Responsive movies={moviesForWeek} genres={allGenres} />
+        </div>
+      </section>
+
+      <section className={css.Section}>
+        <div className={css.SliderContainer}>
+          <div className={css.SectionHead}>
+            <h2 className={css.SectionTitle}>TOP RATED</h2>
+            <MoreVideos />
+          </div>
+
+          <Responsive movies={moviesTop} genres={allGenres} />
+        </div>
+      </section>
+
+      {/* <ToastContainer autoClose={2000} hideProgressBar={true} theme="dark" /> */}
+    </div>
+  );
+};
+
+export default Home;

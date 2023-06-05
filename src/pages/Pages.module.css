@@ -1,0 +1,52 @@
+.SectionTitle {
+  margin: 0;
+}
+
+.Section {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.SectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SliderContainer {
+  width: 1500px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.DetailPageContainer {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  width: 100vw;
+  height: 90vh;
+}
+
+.BtnContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.Btn {
+  background-color: var(--header-bg);
+  color: var(--secondary-txt-cl);
+  font-weight: 500;
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding: 8px;
+}
+
+.InfoContainer {
+  margin-left: 100px;
+  padding-top: 10px;
+}

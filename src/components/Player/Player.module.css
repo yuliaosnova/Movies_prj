@@ -1,0 +1,15 @@
+.PlayerWrapper {
+	/* position: relative;
+	padding-top: 56.25%; */
+
+
+
+}
+
+.Player {
+	position: absolute;
+	top: 10%;
+	right: 5%;
+
+	
+}
