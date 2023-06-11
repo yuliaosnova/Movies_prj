@@ -1,14 +1,13 @@
-import { toast } from "react-toastify";
-
-import { Movie } from "../components/Movie/Movie";
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { Movie } from "../components/Movie/Movie";
 import * as API from "../servises/api";
 import { cutDate, setAddButtonText } from "../utils/utils";
-import css from "./Pages.module.css";
 import { Player } from "../components/Player/Player";
-import { useDispatch, useSelector } from "react-redux";
 import { add, remove } from "../redux/collectedMovieSlice";
+import css from "./Pages.module.css";
 
 const MovieDetails = () => {
   const [film, setFilm] = useState({});
@@ -66,7 +65,7 @@ const MovieDetails = () => {
       className={css.DetailPageContainer}
       style={{
         backgroundImage: `linear-gradient(to right,
-		rgba(47, 48, 58, 0.8),
+		rgb(47, 48, 58, 0.8),
 		rgba(47, 48, 58, 0.8)), url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${film.backdrop_path})`,
       }}
     >
@@ -77,7 +76,6 @@ const MovieDetails = () => {
           </Link>
 
           <button className={css.Btn} onClick={() => addToCollection(film)}>
-           
             <span className={css.Text}>
               {setAddButtonText(film.id, collectedMovies)}
             </span>

@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
-
 import MovieListItem from "../MovieListItem/MovieListItem";
-import * as API from "../../servises/api";
+import { useGetGenresQuery } from "../../redux/genresSlice";
 import css from "./Gallery.module.css";
 
 export const Gallery = ({ movies }) => {
-  const [allGenres, setGenres] = useState([]);
-
-  //Функція для отримання списку жанрів при маунті компонента
-  useEffect(() => {
-    API.fetchGenres().then((response) => {
-      const movieGenres = response.genres;
-      console.log("movieGenres", movieGenres);
-      setGenres(movieGenres);
-    });
-  }, []);
+  const { data } = useGetGenresQuery();
+  const allGenres = data.genres;
 
   return (
     <ul className={css.GalleryContainer}>

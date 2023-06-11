@@ -3,21 +3,13 @@
 }
 
 .Section {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding: 20px 10px 15px 15px;
 }
 
 .SectionHead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.SliderContainer {
-  width: 1500px;
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .DetailPageContainer {
@@ -49,4 +41,56 @@
 .InfoContainer {
   margin-left: 100px;
   padding-top: 10px;
+}
+
+/* Search page */
+.List {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 760px) {
+  .List {
+    margin-top: 50px;
+  }
+}
+
+.ListItem:hover {
+  transform: scale(1.002);
+}
+
+.Title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ItemInfo {
+  display: flex;
+  gap: 3px;
+  font-size: 13px;
+  color: var(--main-txt-cl);
+}
+
+.Date {
+  display: flex;
+  gap: 4px;
+}
+
+.FailMessage {
+  text-align: center;
+  font-size: 26px;
+  color: var(--secondary-txt-cl);
+}
+
+.SearchGanresContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  margin: 10px;
 }

@@ -1,7 +1,6 @@
 import { useSearchParams, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-
 import { PaginatedItems } from "../components/Pagination/Pagination";
 import { Gallery } from "../components/Gallery/Gallery";
 

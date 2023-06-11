@@ -1,29 +1,31 @@
-import { useState } from 'react';
-
+import { useState } from "react";
+import css from "./SearchBar.module.css";
 
 export const SearchBar = ({ onSubmit }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearchQuery(e.target.value.trim().toLowerCase());
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('query:', searchQuery);
+    console.log("query:", searchQuery);
 
     onSubmit(searchQuery);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={css.Form}>
       <input
-        className=""
+        className={css.Input}
         type="text"
         autoFocus
         onChange={handleChange}
       ></input>
-      <button type="submit">Search</button>
+      <button type="submit" className={css.SubmitBtn}>
+        Search
+      </button>
     </form>
   );
 };

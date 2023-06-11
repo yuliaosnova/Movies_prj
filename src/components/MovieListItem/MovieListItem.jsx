@@ -1,8 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import { toast } from "react-toastify";
-
 import { add, remove } from "../../redux/collectedMovieSlice";
 import {
   getGenre,
@@ -10,7 +8,6 @@ import {
   setAddButtonText,
   getNamesFromArrow,
 } from "../../utils/utils";
-
 import css from "./MovieListItem.module.css";
 
 const MovieListItem = ({
@@ -24,6 +21,7 @@ const MovieListItem = ({
   release_date,
 }) => {
   const collectedMovies = useSelector((state) => state.collectedMovies);
+
   const location = useLocation();
   const dispatch = useDispatch();
 

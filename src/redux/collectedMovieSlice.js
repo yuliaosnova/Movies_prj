@@ -1,15 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const collectedMoviesSlice = createSlice({
-  name: 'collection',
+  name: "collection",
   initialState: [],
   reducers: {
     add(state, action) {
-      state.push(action.payload);
-      // return [...state, action.payload]
+      state.unshift(action.payload);
     },
     remove(state, action) {
-      return state.filter(item => item.id !== action.payload);
+      return state.filter((item) => item.id !== action.payload);
     },
   },
 });

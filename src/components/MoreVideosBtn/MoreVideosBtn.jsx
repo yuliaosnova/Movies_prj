@@ -1,5 +1,5 @@
-import css from "../MoreVideosBtn/MoreVideosBtn.module.css";
 import { Link } from "react-router-dom";
+import css from "../MoreVideosBtn/MoreVideosBtn.module.css";
 
 export const MoreVideos = () => {
   return (

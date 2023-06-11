@@ -3,32 +3,32 @@ import { useState, useEffect } from "react";
 import * as API from "../servises/api";
 import SimpleSlider from "../components/HeroSlider/HeroSlider";
 import { MoreVideos } from "../components/MoreVideosBtn/MoreVideosBtn";
-import ScrollButton from "../components/ScrollButton/ScrollButton";
+
 import css from "./Pages.module.css";
-// import { ToastContainer} from 'react-toastify';
+import { useGetGenresQuery } from "../redux/genresSlice";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [moviesForWeek, setMoviesForWeek] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
-  const [allGenres, setGenres] = useState([]);
+  //   const [allGenres, setGenres] = useState([]);
 
-  //Функція для отримання списку жанрів при маунті компонента
-  useEffect(() => {
-    API.fetchGenres().then((response) => {
-      const movieGenres = response.genres;
-      console.log("movieGenres", movieGenres);
-      setGenres(movieGenres);
-    });
-  }, []);
+  const { data } = useGetGenresQuery();
+  console.log("DATA", data.genres);
+  const allGenres = data.genres;
+
+  //   Функція для отримання списку жанрів при маунті компонента
+  //   useEffect(() => {
+  //     API.fetchGenres().then((response) => {
+  //       const movieGenres = response.genres;
+  //       console.log("movieGenres", movieGenres);
+  //       setGenres(movieGenres);
+  //     });
+  //   }, []);
 
   useEffect(() => {
     API.fetchPopularMoviesForDay()
       .then((response) => {
-        //   if (movies.hits.length === 0) {
-        //     alert('no matching results');
-        //   }
-        //   console.log(response.results);
         setMovies(response.results);
       })
       .catch((error) => {
@@ -93,8 +93,6 @@ const Home = () => {
           <Responsive movies={moviesTop} genres={allGenres} />
         </div>
       </section>
-
-      {/* <ToastContainer autoClose={2000} hideProgressBar={true} theme="dark" /> */}
     </div>
   );
 };

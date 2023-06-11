@@ -1,0 +1,61 @@
+.Form {
+  width: 450px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: 1px solid #fff;
+}
+
+.Input {
+  width: 320px;
+  padding: 12px 15px;
+
+  float: left;
+  color: #ccc;
+  border: 0;
+  background-color: var(--footer-bg);
+  border-radius: 3px 0 0 3px;
+}
+
+.Input:focus {
+  outline: 0;
+}
+
+.SubmitBtn {
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+  background-color: var(--footer-bg);
+  border-left: 1px solid #fff;
+  border-radius: 0 3px 3px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .Form {
+    width: 390px;
+  }
+
+  .Input {
+    width: 270px;
+  }
+
+  .SubmitBtn {
+    width: 90px;
+  }
+}
+
+.SubmitBtn:hover {
+  color: #d15fcf;
+}
+
+.SubmitBtn:active {
+  box-shadow: 0px 0px 1px 0px rgba(225, 225, 225, 1);
+}
+
+.SubmitBtn:focus {
+  outline: 0;
+}

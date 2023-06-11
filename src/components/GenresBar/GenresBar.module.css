@@ -1,0 +1,93 @@
+.GenresContainer {
+  position: absolute;
+  top: 66px;
+  right: 100px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+
+  font-size: 17px;
+  color: var(--secondary-txt-cl);
+}
+
+@media screen and (max-width: 850px) {
+	.GenresContainer {
+		right: 5px;
+	}
+ }
+
+ @media screen and (max-width: 760px) {
+	.GenresContainer {
+		top: 115px;
+	}
+ }
+
+.GenresList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.Genre {
+  background-color: var(--footer-bg);
+  padding: 8px;
+}
+
+.GenreSelected {
+  background-color: var(--footer-bg);
+  padding: 8px;
+
+  background-color: var(--accent-cl);
+  color: var(--main-txt-cl);
+}
+
+.Genre:hover {
+  background-color: rgb(31, 108, 108);
+}
+
+.DropdownInput {
+  padding: 8px;
+
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  width: 150px;
+
+  background-color: var(--footer-bg);
+}
+
+.DropdownMenu {
+  z-index: 10;
+  width: 165px;
+  height: 300px;
+
+  transition: var(--animation);
+  border: 1px solid var(--accent-cl);
+  overflow: auto;
+  background-color: var(--footer-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.DropdownItem {
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: var(--animation);
+}
+
+.DropdownItem:hover {
+  background-color: rgb(31, 108, 108);
+}
+
+.DropdownItemSelected {
+  padding: 5px;
+  cursor: pointer;
+
+  background-color: var(--accent-cl);
+  color: var(--main-txt-cl);
+}

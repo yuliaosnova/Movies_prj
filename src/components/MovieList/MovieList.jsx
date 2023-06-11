@@ -1,11 +1,8 @@
 import { Component } from "react";
-
 import MovieListItem from "../MovieListItem/MovieListItem";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import "./MovieList.css";
 
 export default class Responsive extends Component {
@@ -14,9 +11,41 @@ export default class Responsive extends Component {
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 5,
-      initialSlide: 0,
+      autoplay: true,
+
+      slidesToShow: 6,
+      slidesToScroll: 2,
+      initialSlide: 6,
+      responsive: [
+        {
+          breakpoint: 1600,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 1300,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
     };
 
     return (

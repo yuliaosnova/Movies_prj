@@ -1,11 +1,25 @@
 .ScrollBtn {
-	position: fixed; 
-   width: 100%;
-   left: 93%;
-   bottom: 10%;
-   height: 30px;
-   font-size: 3rem;
-   z-index: 1;
-   cursor: pointer;
-   color: var(--active-bg);
+	position: fixed;
+	width: 100%;
+	left: 93%;
+	bottom: 12%;
+	height: 30px;
+	font-size: 3rem;
+	z-index: 1;
+	cursor: pointer;
+	color: var(--active-bg);
+}
+
+@media screen and (max-width: 768px) {
+	.ScrollBtn {
+		left: 84%;
+		bottom: 11%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.ScrollBtn {
+		left: 70%;
+		bottom: 11%;
+	}
 }

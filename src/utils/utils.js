@@ -38,7 +38,7 @@ export function setAddButtonText(id, collectedMovies) {
   }
 }
 
-// Высчитываем высоту footer и делаем соответствующий отступ от main:
+// Функція для притиснення футера
 function footer() {
   const main = document.getElementsByTagName("main")[0];
   const footer = document.getElementsByTagName("footer")[0];

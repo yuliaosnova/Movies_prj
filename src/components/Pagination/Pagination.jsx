@@ -1,6 +1,6 @@
-import { Gallery} from '../Gallery/Gallery'
-import ReactPaginate from 'react-paginate';
-import css from './Pagination.module.css';
+import { Gallery } from "../Gallery/Gallery";
+import ReactPaginate from "react-paginate";
+import css from "./Pagination.module.css";
 
 export function PaginatedItems({
   data,
@@ -11,28 +11,23 @@ export function PaginatedItems({
 }) {
   const pageCount = total;
 
-  const handlePageClick = event => {
+  const handlePageClick = (event) => {
     clickHandler(event.selected + 1);
   };
 
   return (
     <>
-      <Gallery movies={data} location={location} />
+      <div className={css.GalleryContainer}>
+        <Gallery movies={data} location={location} />
+      </div>
 
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={8}
+        pageRangeDisplayed={4}
         pageCount={pageCount}
-        previousLabel="< previous"
-      //   renderOnZeroPageCount={null}
-		//   prevRel={null}
-		//   nextRel={null}
-		// showPaginationBottom={false}
-	
-		
-	
+        previousLabel="<"
         containerClassName={css.Pagination}
         pageLinkClassName={css.PageNum}
         previousLinkClassName={css.PageNum}

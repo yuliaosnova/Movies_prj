@@ -1,26 +1,32 @@
 .Pagination {
-	list-style: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 5rem;
-	font-size: 1.2rem;
-	gap: 5px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  font-size: 1.2rem;
+  gap: 5px;
+  padding: 30px, 0;
 }
 
 .Pagination .PageNum {
-	padding: 8px 15px;
-	cursor: pointer;
-	border-radius: 3px;
-	font-weight: 500;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 500;
 }
 
-.Pagination .PageNum:hover{
-	background-color: #475974;
-	color: white;
+.Pagination .PageNum:hover {
+  background-color: #475974;
+  color: white;
 }
 
 .Pagination .Active {
-	background-color: #2d394b;
-	color: white;
+  background-color: #2d394b;
+  color: white;
+}
+
+.GalleryContainer {
+  display: flex;
+  justify-content: center;
 }

@@ -1,11 +1,8 @@
 import { Suspense } from "react";
 import { Outlet, NavLink } from "react-router-dom";
-
 import { BsGithub } from "react-icons/bs";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import css from "./Layout.module.css";
 
 export const Layout = () => {
