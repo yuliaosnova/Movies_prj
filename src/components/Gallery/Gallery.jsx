@@ -4,7 +4,7 @@ import css from "./Gallery.module.css";
 
 export const Gallery = ({ movies }) => {
   const { data } = useGetGenresQuery();
-  const allGenres = data.genres;
+  const allGenres = data?.genres ?? [];
 
   return (
     <ul className={css.GalleryContainer}>

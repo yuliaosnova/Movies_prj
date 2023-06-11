@@ -7,7 +7,7 @@ const GenresBar = ({ placeHolder, getFilteredValue }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const { data } = useGetGenresQuery();
-  const allGenres = data.genres;
+  const allGenres = data?.genres ?? [];
 
   const opt = allGenres.map((item) => item.name);
   const visibleOptions = opt.slice(0, findDispalyedGenres());

@@ -11,20 +11,24 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [moviesForWeek, setMoviesForWeek] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
-  //   const [allGenres, setGenres] = useState([]);
+   //  const [allGenres, setGenres] = useState([]);
 
   const { data } = useGetGenresQuery();
-  console.log("DATA", data.genres);
-  const allGenres = data.genres;
 
-  //   Функція для отримання списку жанрів при маунті компонента
-  //   useEffect(() => {
-  //     API.fetchGenres().then((response) => {
-  //       const movieGenres = response.genres;
-  //       console.log("movieGenres", movieGenres);
-  //       setGenres(movieGenres);
-  //     });
-  //   }, []);
+  const allGenres = data?.genres ?? []; 
+	// optional chaining: Без оператора опциональной последовательности 
+	// поиск глубоко расположенных подсвойств требует проверки всех промежуточных свойств на существование
+
+   //  console.log("DATA", allGenres);
+
+   //  Функція для отримання списку жанрів при маунті компонента
+   //  useEffect(() => {
+   //    API.fetchGenres().then((response) => {
+   //      const movieGenres = response.genres;
+   //      console.log("movieGenres", movieGenres);
+   //      setGenres(movieGenres);
+   //    });
+   //  }, []);
 
   useEffect(() => {
     API.fetchPopularMoviesForDay()
