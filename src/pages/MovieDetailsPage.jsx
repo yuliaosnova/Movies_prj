@@ -23,7 +23,6 @@ const MovieDetails = () => {
   const [collection, setCollection] = useState([]);
   const db = getDatabase();
 
-
   useEffect(() => {
     API.fetchMovieDetails(movieId)
       .then((response) => {

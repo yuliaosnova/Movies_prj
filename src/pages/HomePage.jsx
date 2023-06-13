@@ -15,7 +15,7 @@ const Home = () => {
 	
   const { data } = useGetGenresQuery();
   const allGenres = data?.genres ?? []; 
-//   console.log("DATA", allGenres);
+
 	// optional chaining: Без оператора опциональной последовательности 
 	// поиск глубоко расположенных подсвойств требует проверки всех промежуточных свойств на существование
 
