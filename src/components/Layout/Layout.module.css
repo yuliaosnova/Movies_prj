@@ -15,13 +15,13 @@
 	z-index: 10;
 }
 
-.Enter {
+/* .Enter {
 	margin-right: 30px;
 	display: flex;
 	gap: 20px;
-}
+} */
 
-.EnterBtn {
+/* .EnterBtn {
 	font-size: 14px;
 	text-transform: uppercase;
 	display: flex;
@@ -37,11 +37,11 @@
 	border: none;
 	color: var(--secondary-txt-cl);
 	text-transform: uppercase;
-}
+} */
 
-.EnterBtn:hover {
+/* .EnterBtn:hover {
 	background-color: var(--active-bg);
-}
+} */
 
 nav {
 	display: flex;
@@ -66,10 +66,10 @@ nav {
 		gap: 5px;
 	}
 
-	.Enter {
+	/* .Enter {
 		margin-right: 5px;
 		gap: 5px;
-	}
+	} */
 }
 
 .FooterContent {

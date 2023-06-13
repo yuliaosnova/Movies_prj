@@ -15,9 +15,8 @@ export function getGenre(arrow, ids) {
 
 export function getNamesFromArrow(arr) {
   let names = [];
-
   arr.map((item) => names.push(item.name));
-
+  
   return names;
 }
 
@@ -36,6 +35,14 @@ export function setAddButtonText(id, collectedMovies) {
   } else {
     return "ADD TO COLLECTION";
   }
+}
+
+export function findDispalyedGenres() {
+  const windowInnerWidth = window.innerWidth;
+
+  if (windowInnerWidth >= 1200) {
+    return 7;
+  } else return 1;
 }
 
 // Функція для притиснення футера

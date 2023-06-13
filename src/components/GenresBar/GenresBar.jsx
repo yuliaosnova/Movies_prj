@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGetGenresQuery } from "../../redux/genresSlice";
+import { findDispalyedGenres } from "../../utils/utils";
 import css from "../GenresBar/GenresBar.module.css";
 
 const GenresBar = ({ placeHolder, getFilteredValue }) => {
@@ -57,13 +58,6 @@ const GenresBar = ({ placeHolder, getFilteredValue }) => {
     return true;
   };
 
-  function findDispalyedGenres() {
-    const windowInnerWidth = window.innerWidth;
-    console.log("innerWidth", windowInnerWidth);
-    if (windowInnerWidth >= 1200) {
-      return 7;
-    } else return 1;
-  }
 
   return (
     <div className={css.GenresContainer}>

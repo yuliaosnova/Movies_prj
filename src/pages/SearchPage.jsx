@@ -10,7 +10,7 @@ import css from "./Pages.module.css";
 const SearchedMovies = () => {
   const [moviesBySeach, setMoviesBySeach] = useState([]);
   const [moviesByGenre, setMoviesByGenre] = useState([]);
-  const [page, setPage] = useState(1);
+//   const [page, setPage] = useState(1);
   const [showMessage, setShowMessage] = useState(false);
 
   const location = useLocation();
@@ -21,6 +21,7 @@ const SearchedMovies = () => {
   });
   const query = searchParams.get("query") ?? "";
   const filter = searchParams.get("genre") ?? "";
+  let page = 1;
 
   useEffect(() => {
     if (query === "") {

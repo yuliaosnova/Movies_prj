@@ -10,8 +10,6 @@ export const SearchBar = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("query:", searchQuery);
-
     onSubmit(searchQuery);
   };
 

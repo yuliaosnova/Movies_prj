@@ -58,7 +58,7 @@ export async function fetchMovieByGenre(genreId) {
     `${BASE_URL}discover/movie?api_key=${API_KEY}&with_genres=${genreId}`
   );
 
-  console.log("responce-byGenre:", response.data);
+//   console.log("responce-byGenre:", response.data);
 
   return response.data;
 }

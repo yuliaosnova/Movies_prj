@@ -1,26 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { getDatabase, onValue, ref, set } from "firebase/database";
 import { Movie } from "../components/Movie/Movie";
 import * as API from "../servises/api";
 import { cutDate, setAddButtonText } from "../utils/utils";
 import { Player } from "../components/Player/Player";
-import { add, remove } from "../redux/collectedMovieSlice";
 import css from "./Pages.module.css";
+
 
 const MovieDetails = () => {
   const [film, setFilm] = useState({});
+  console.log("FILM", film)
 
   const [traillerKey, setTraillerKey] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
   const { movieId } = useParams();
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? "/movies");
+  const userId = useSelector((state) => state.user.uid);
+  const [collection, setCollection] = useState([]);
+  const db = getDatabase();
 
-  const collectedMovies = useSelector((state) => state.collectedMovies);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     API.fetchMovieDetails(movieId)
@@ -47,16 +51,44 @@ const MovieDetails = () => {
       });
   }, [movieId]);
 
-  const addToCollection = (film) => {
-    const alreadyInCollection = collectedMovies.find(
-      (movie) => movie.id === film.id
+  useEffect(() => {
+    if (!isLoggedIn) {
+      return;
+    }
+
+    const collectionRef = ref(db, "collections/" + userId);
+    const unsubscribe = onValue(collectionRef, (snapshot) => {
+      const data = snapshot.val();
+      const array = Object.values(data);
+
+      setCollection(array);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [db, isLoggedIn, userId]);
+
+  const addToCollection = (movieId) => {
+    if (!isLoggedIn) {
+      toast.error("You must be authorized!");
+      return;
+    }
+
+    const alreadyInCollection = collection.find(
+      (movie) => movie.id === movieId
     );
+
     if (alreadyInCollection) {
+      set(ref(db, "collections/" + userId + "/" + movieId), null);
       toast("Deleted from collection");
-      dispatch(remove(film.id));
+
     } else {
+      set(
+        ref(db, "collections/" + userId + "/" + movieId),
+        film
+      );
       toast("Added to collection");
-      dispatch(add(film));
     }
   };
 
@@ -75,9 +107,9 @@ const MovieDetails = () => {
             <button className={css.Btn}>← Go back</button>
           </Link>
 
-          <button className={css.Btn} onClick={() => addToCollection(film)}>
+          <button className={css.Btn} onClick={() => addToCollection(film.id)}>
             <span className={css.Text}>
-              {setAddButtonText(film.id, collectedMovies)}
+              {setAddButtonText(film.id, collection)}
             </span>
           </button>
         </div>

@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { getDatabase, onValue, ref, set } from "firebase/database";
 import { toast } from "react-toastify";
-import { add, remove } from "../../redux/collectedMovieSlice";
 import {
   getGenre,
   cutDate,
@@ -20,22 +21,53 @@ const MovieListItem = ({
   genre_ids,
   release_date,
 }) => {
-  const collectedMovies = useSelector((state) => state.collectedMovies);
-
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const userId = useSelector((state) => state.user.uid);
+  const [collection, setCollection] = useState([]);
+  const db = getDatabase();
   const location = useLocation();
-  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      return;
+    }
+
+    const collectionRef = ref(db, "collections/" + userId);
+    const unsubscribe = onValue(collectionRef, (snapshot) => {
+    const data = snapshot.val();
+    const array = Object.values(data);
+
+      setCollection(array);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [db, isLoggedIn, userId]);
 
   const addToCollection = (clickedMoviesID) => {
+    if (!isLoggedIn) {
+      toast.error("You must be authorized!");
+      return;
+    }
+
     const clickedMovie = movies.find((movie) => movie.id === clickedMoviesID);
-    const alreadyInCollection = collectedMovies.find(
+
+    const alreadyInCollection = collection.find(
       (movie) => movie.id === clickedMoviesID
     );
+
     if (alreadyInCollection) {
-      toast("Deleted from collection");
-      dispatch(remove(clickedMoviesID));
+      set(ref(db, "collections/" + userId + "/" + clickedMoviesID), null);
+		toast("Deleted from collection");
+
     } else {
-      toast("Added to collection");
-      dispatch(add(clickedMovie));
+      set(
+        ref(db, "collections/" + userId + "/" + clickedMoviesID),
+        clickedMovie
+      );
+		toast("Added to collection");
     }
   };
 
@@ -76,9 +108,7 @@ const MovieListItem = ({
       </div>
       <button className={css.Button} onClick={() => addToCollection(id)}>
         <span className={css.Icon}>+</span>
-        <span className={css.Text}>
-          {setAddButtonText(id, collectedMovies)}
-        </span>
+        <span className={css.Text}>{setAddButtonText(id, collection)}</span>
       </button>
     </>
   );

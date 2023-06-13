@@ -94,3 +94,11 @@
 
   margin: 10px;
 }
+
+/* My collectionPage */
+.UnauthorizeMessage {
+	text-align: center;
+	margin-top: 20px;
+
+	font-size: 20px;
+}

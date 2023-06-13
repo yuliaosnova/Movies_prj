@@ -12,14 +12,14 @@ const Home = () => {
   const [moviesForWeek, setMoviesForWeek] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
    //  const [allGenres, setGenres] = useState([]);
-
+	
   const { data } = useGetGenresQuery();
-
   const allGenres = data?.genres ?? []; 
+//   console.log("DATA", allGenres);
 	// optional chaining: Без оператора опциональной последовательности 
 	// поиск глубоко расположенных подсвойств требует проверки всех промежуточных свойств на существование
 
-   //  console.log("DATA", allGenres);
+    
 
    //  Функція для отримання списку жанрів при маунті компонента
    //  useEffect(() => {

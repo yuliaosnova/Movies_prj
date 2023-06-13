@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { collectionReducer } from "./collectedMovieSlice";
+// import { collectionReducer } from "./collectedMovieSlice";
 
 import {
   persistStore,
@@ -13,23 +13,25 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import { genresApi } from "./genresSlice";
+import { userSlice } from "./userSlice";
 
-const persistConfig = {
-  key: "root",
-  version: 1,
-  storage,
-  whitelist: ['collectedMovies'], 
-};
+// const persistConfig = {
+//   key: "root",
+//   version: 1,
+//   storage,
+//   whitelist: ['collectedMovies'], 
+// };
 
 const rootReducer = combineReducers({
-  collectedMovies: collectionReducer,
+//   collectedMovies: collectionReducer,
   [genresApi.reducerPath]: genresApi.reducer,
+  user: userSlice.reducer,
 });
 
-const persistedReduser = persistReducer(persistConfig, rootReducer);
+// const persistedReduser = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReduser,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({
       serializableCheck: {

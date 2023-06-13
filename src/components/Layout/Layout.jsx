@@ -1,8 +1,11 @@
 import { Suspense } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { AppBar } from "../AppBar/AppBar";
 import css from "./Layout.module.css";
 
 export const Layout = () => {
@@ -23,10 +26,13 @@ export const Layout = () => {
             My collection
           </NavLink>
         </nav>
-        <div className={css.Enter}>
-          <button className={css.EnterBtn}>log in</button>
+        <AppBar />
+        {/* <div className={css.Enter}>
+          <NavLink to="/login" className={css.NavItem}>
+            Log in
+          </NavLink>
           <button className={css.EnterBtn}>Sign up</button>
-        </div>
+        </div> */}
       </header>
       <main>
         <Suspense fallback={<div>Loading...</div>}>
