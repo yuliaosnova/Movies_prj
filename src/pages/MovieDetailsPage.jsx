@@ -12,8 +12,6 @@ import css from "./Pages.module.css";
 
 const MovieDetails = () => {
   const [film, setFilm] = useState({});
-  console.log("FILM", film)
-
   const [traillerKey, setTraillerKey] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
   const { movieId } = useParams();

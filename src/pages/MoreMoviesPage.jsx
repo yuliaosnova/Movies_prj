@@ -37,6 +37,12 @@ const MoreMovies = () => {
       });
   }, [page]);
 
+
+  useEffect(() => {
+	
+ }, [page]);
+
+
   return (
     <>
       <ScrollButton />
