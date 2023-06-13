@@ -46,12 +46,12 @@ export function findDispalyedGenres() {
 }
 
 // Функція для притиснення футера
-function footer() {
-  const main = document.getElementsByTagName("main")[0];
-  const footer = document.getElementsByTagName("footer")[0];
+// function footer() {
+//   const main = document.getElementsByTagName("main")[0];
+//   const footer = document.getElementsByTagName("footer")[0];
 
-  main.style.paddingBottom = footer.clientHeight + "px";
-}
+//   main.style.paddingBottom = footer.clientHeight + "px";
+// }
 
-window.addEventListener("load", footer);
-window.addEventListener("resize", footer);
+// window.addEventListener("load", footer);
+// window.addEventListener("resize", footer);
