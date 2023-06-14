@@ -11,24 +11,21 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [moviesForWeek, setMoviesForWeek] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
-   //  const [allGenres, setGenres] = useState([]);
-	
+  //  const [allGenres, setGenres] = useState([]);
+
   const { data } = useGetGenresQuery();
-  const allGenres = data?.genres ?? []; 
+  const allGenres = data?.genres ?? [];
 
-	// optional chaining: Без оператора опциональной последовательности 
-	// поиск глубоко расположенных подсвойств требует проверки всех промежуточных свойств на существование
+ 
 
-    
-
-   //  Функція для отримання списку жанрів при маунті компонента
-   //  useEffect(() => {
-   //    API.fetchGenres().then((response) => {
-   //      const movieGenres = response.genres;
-   //      console.log("movieGenres", movieGenres);
-   //      setGenres(movieGenres);
-   //    });
-   //  }, []);
+  //  Функція для отримання списку жанрів при маунті компонента
+  //  useEffect(() => {
+  //    API.fetchGenres().then((response) => {
+  //      const movieGenres = response.genres;
+  //      console.log("movieGenres", movieGenres);
+  //      setGenres(movieGenres);
+  //    });
+  //  }, []);
 
   useEffect(() => {
     API.fetchPopularMoviesForDay()
@@ -63,14 +60,14 @@ const Home = () => {
   const heroMoviesArr = movies.slice(0, 5);
 
   return (
-    <div>
+    <>
       <section className="Hero">
         <SimpleSlider movies={heroMoviesArr} />
       </section>
 
       <section className={css.Section}>
+        <h2 className={css.SectionTitle}>Trending today</h2>
         <div className={css.SliderContainer}>
-          <h2 className={css.SectionTitle}>Trending today</h2>
           <Responsive movies={movies} genres={allGenres} />
         </div>
       </section>
@@ -81,23 +78,22 @@ const Home = () => {
         }}
         className={css.Section}
       >
+        <h2 className={css.SectionTitle}>Trending this week</h2>
         <div className={css.SliderContainer}>
-          <h2 className={css.SectionTitle}>Trending this week</h2>
           <Responsive movies={moviesForWeek} genres={allGenres} />
         </div>
       </section>
 
       <section className={css.Section}>
+        <div className={css.SectionHead}>
+          <h2 className={css.SectionTitle}>TOP RATED</h2>
+          <MoreVideos />
+        </div>
         <div className={css.SliderContainer}>
-          <div className={css.SectionHead}>
-            <h2 className={css.SectionTitle}>TOP RATED</h2>
-            <MoreVideos />
-          </div>
-
           <Responsive movies={moviesTop} genres={allGenres} />
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

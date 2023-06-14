@@ -100,5 +100,18 @@
 	text-align: center;
 	margin-top: 20px;
 
+	
 	font-size: 20px;
 }
+
+@media screen and (max-width: 1200px) {
+	.UnauthorizeMessage, .Plug {
+		padding-bottom: 635px;
+	}
+ }
+
+ @media screen and (max-width: 768px) {
+	.UnauthorizeMessage, .Plug {
+		padding-bottom: 670px;
+	}
+ }

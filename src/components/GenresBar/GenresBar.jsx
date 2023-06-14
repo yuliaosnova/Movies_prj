@@ -14,7 +14,7 @@ const GenresBar = ({ placeHolder, getFilteredValue }) => {
   const visibleOptions = opt.slice(0, findDispalyedGenres());
   visibleOptions.push("All");
 
-  const hiddenOptions = opt.slice(findDispalyedGenres, opt.length);
+  const hiddenOptions = opt.slice(findDispalyedGenres(), opt.length);
 
   useEffect(() => {
     const handler = () => setShowMenu(false);

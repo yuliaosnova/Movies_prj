@@ -104,6 +104,7 @@ const SearchedMovies = () => {
       <div className={css.SerchedContainer}>
         {moviesByGenre && <Gallery movies={moviesByGenre} />}
       </div>
+		{moviesByGenre.length === 0 && moviesBySeach.length === 0  && <div className={css.Plug}></div> }
 
       <GenresBar placeHolder="Others" getFilteredValue={getFilteredValue} />
 

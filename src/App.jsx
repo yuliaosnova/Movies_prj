@@ -11,7 +11,7 @@ const MovieDetails = lazy(() => import("./pages/MovieDetailsPage"));
 
 const App = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 };
 

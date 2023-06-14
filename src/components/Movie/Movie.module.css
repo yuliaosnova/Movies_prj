@@ -10,8 +10,8 @@
   width: 40%;
 }
 
-.Image {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
+@media screen and (max-width: 768px) {
+  .Info {
+    font-size: 14px;
+  }
 }

@@ -12,14 +12,14 @@
 
 @media screen and (max-width: 768px) {
 	.ScrollBtn {
-		left: 84%;
+		left: 87%;
 		bottom: 11%;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	.ScrollBtn {
-		left: 70%;
+		left: 80%;
 		bottom: 11%;
 	}
 }

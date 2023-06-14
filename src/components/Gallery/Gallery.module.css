@@ -6,3 +6,9 @@
 .ItemContainer {
   position: relative;
 }
+
+@media screen and (max-width: 768px) {
+  .GalleryContainer {
+    justify-content: center;
+  }
+}

@@ -8,26 +8,6 @@
 	background-color: var(--active-bg);
 }
 
-.NavItem {
-	color: var(--secondary-txt-cl);
-	font-size: 14px;
-	text-transform: uppercase;
-	display: flex;
-	align-items: center;
-	padding: 18px 16px;
-}
-
-@media screen and (max-width: 768px) {
-	.NavItem {
-		padding: 8px 16px;
-	}
-
-	.Enter {
-		margin-right: 5px;
-		gap: 5px;
-	}
-}
-
 .EnterBtn {
 	font-size: 14px;
 	text-transform: uppercase;
@@ -44,4 +24,16 @@
 	border: none;
 	color: var(--secondary-txt-cl);
 	text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+	.EnterBtn {
+		padding: 9px 16px;
+		font-size: 12px;
+	}
+
+	.Enter {
+		margin-right: 5px;
+		gap: 5px;
+	}
 }
