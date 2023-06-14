@@ -3,11 +3,11 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-console.log('apiKEY', API_KEY)
+// const API_KEY = import.meta.env.VITE_API_KEY;
+// console.log('apiKEY', API_KEY)
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyCdJfzvI8eoe8_vuLp_xGO9dkDfJtXxslI",
   authDomain: "movieprjauth.firebaseapp.com",
   projectId: "movieprjauth",
   storageBucket: "movieprjauth.appspot.com",
