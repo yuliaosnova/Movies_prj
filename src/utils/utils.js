@@ -55,3 +55,14 @@ function footer() {
 
 window.addEventListener("load", footer);
 window.addEventListener("resize", footer);
+
+
+
+  //  Функція для отримання списку жанрів при маунті компонента
+  //  useEffect(() => {
+  //    API.fetchGenres().then((response) => {
+  //      const movieGenres = response.genres;
+  //      console.log("movieGenres", movieGenres);
+  //      setGenres(movieGenres);
+  //    });
+  //  }, []);

@@ -27,12 +27,6 @@ export const Layout = () => {
           </NavLink>
         </nav>
         <AppBar />
-        {/* <div className={css.Enter}>
-          <NavLink to="/login" className={css.NavItem}>
-            Log in
-          </NavLink>
-          <button className={css.EnterBtn}>Sign up</button>
-        </div> */}
       </header>
       <main>
         <Suspense fallback={<div>Loading...</div>}>

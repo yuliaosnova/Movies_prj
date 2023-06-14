@@ -2,7 +2,6 @@ import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import MyCollectionPage from "./pages/MyCollectionPage";
 import { Layout } from "./components/Layout/Layout";
-// import css from "./App.module.css";
 
 const Home = lazy(() => import("./pages/HomePage"));
 const SearchedMovies = lazy(() => import("./pages/SearchPage"));
@@ -15,7 +14,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="login" element={<LoginPage />} /> */}
           <Route path="movies" element={<SearchedMovies />} />
           <Route path="more" element={<MoreMovies />}></Route>
           <Route path="movies/:movieId" element={<MovieDetails />}></Route>

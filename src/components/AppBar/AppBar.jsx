@@ -2,10 +2,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
-  GoogleAuthProvider,
   getAuth,
   getRedirectResult,
-  //   signInWithPopup,
   signInWithRedirect,
 } from "firebase/auth";
 import { app, googleAuthProvider } from "../../firebase";
@@ -43,13 +41,6 @@ export const AppBar = () => {
       .catch((error) => {
         console.log(error.message);
       });
-
-    //  signInWithPopup(auth, googleAuthProvider)
-    //    .then((credentials) => {
-    //      console.log("credentials", credentials);
-    //      dispatch(logIn(credentials.user.displayName));
-    //    })
-    //    .catch((e) => console.log(e));
   }
 
   return (

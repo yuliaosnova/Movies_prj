@@ -15,34 +15,6 @@
 	z-index: 10;
 }
 
-/* .Enter {
-	margin-right: 30px;
-	display: flex;
-	gap: 20px;
-} */
-
-/* .EnterBtn {
-	font-size: 14px;
-	text-transform: uppercase;
-	display: flex;
-	align-items: center;
-	padding: 18px 16px;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 10px;
-
-	background-color: transparent;
-	border: none;
-	color: var(--secondary-txt-cl);
-	text-transform: uppercase;
-} */
-
-/* .EnterBtn:hover {
-	background-color: var(--active-bg);
-} */
-
 nav {
 	display: flex;
 }
@@ -58,7 +30,7 @@ nav {
 
 @media screen and (max-width: 768px) {
 	.NavItem {
-		padding: 8px 16px;
+		padding: 8px 9px;
 	}
 
 	.Header {

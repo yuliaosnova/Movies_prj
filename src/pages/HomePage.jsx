@@ -11,21 +11,9 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [moviesForWeek, setMoviesForWeek] = useState([]);
   const [moviesTop, setMoviesTop] = useState([]);
-  //  const [allGenres, setGenres] = useState([]);
 
   const { data } = useGetGenresQuery();
   const allGenres = data?.genres ?? [];
-
- 
-
-  //  Функція для отримання списку жанрів при маунті компонента
-  //  useEffect(() => {
-  //    API.fetchGenres().then((response) => {
-  //      const movieGenres = response.genres;
-  //      console.log("movieGenres", movieGenres);
-  //      setGenres(movieGenres);
-  //    });
-  //  }, []);
 
   useEffect(() => {
     API.fetchPopularMoviesForDay()

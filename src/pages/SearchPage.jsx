@@ -10,7 +10,6 @@ import css from "./Pages.module.css";
 const SearchedMovies = () => {
   const [moviesBySeach, setMoviesBySeach] = useState([]);
   const [moviesByGenre, setMoviesByGenre] = useState([]);
-//   const [page, setPage] = useState(1);
   const [showMessage, setShowMessage] = useState(false);
 
   const location = useLocation();
