@@ -9,7 +9,7 @@ import React from "react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Movies_prj">
+    <BrowserRouter basename="/">
       <Provider store={store}>
         <App />
       </Provider>
