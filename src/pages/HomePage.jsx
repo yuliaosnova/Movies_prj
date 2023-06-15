@@ -55,9 +55,7 @@ const Home = () => {
 
       <section className={css.Section}>
         <h2 className={css.SectionTitle}>Trending today</h2>
-        <div className={css.SliderContainer}>
           <Responsive movies={movies} genres={allGenres} />
-        </div>
       </section>
 
       <section
@@ -67,9 +65,7 @@ const Home = () => {
         className={css.Section}
       >
         <h2 className={css.SectionTitle}>Trending this week</h2>
-        <div className={css.SliderContainer}>
           <Responsive movies={moviesForWeek} genres={allGenres} />
-        </div>
       </section>
 
       <section className={css.Section}>
@@ -77,9 +73,7 @@ const Home = () => {
           <h2 className={css.SectionTitle}>TOP RATED</h2>
           <MoreVideos />
         </div>
-        <div className={css.SliderContainer}>
           <Responsive movies={moviesTop} genres={allGenres} />
-        </div>
       </section>
     </>
   );

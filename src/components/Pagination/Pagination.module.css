@@ -3,10 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
-  font-size: 1.2rem;
+  font-size: 18px;
   gap: 5px;
-  padding: 30px, 0;
+  padding-bottom: 30px;
 }
 
 .Pagination .PageNum {
@@ -30,3 +29,16 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 480px) {
+	.Pagination {
+		font-size: 14px;
+	 }
+
+	 .Pagination .PageNum {
+		padding: 4px 7px;
+		cursor: pointer;
+		border-radius: 3px;
+		font-weight: 500;
+	 }
+ }

@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { Outlet, NavLink } from "react-router-dom";
-import { BsGithub } from "react-icons/bs";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,18 +32,7 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-      <footer className={css.Footer}>
-        <p className={css.FooterContent}>
-          ©2023 | All rights reserved |{" "}
-          <a
-            href="https://github.com/yuliaosnova"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <BsGithub />{" "}
-          </a>
-        </p>
-      </footer>
+      <footer></footer>
       <ToastContainer
         position="top-right"
         autoClose={2000}

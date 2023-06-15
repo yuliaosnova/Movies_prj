@@ -2,7 +2,7 @@
 	list-style: none;
 	width: 280px;
 	height: 450px;
-	padding: 10px;
+	padding-right: 10px;
 	display: flex;
 	border-radius: 0px 0px 4px 4px;
 	transition: var(--animation);
