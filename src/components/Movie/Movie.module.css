@@ -1,17 +1,18 @@
 .Info {
-  color: var(--secondary-txt-cl);
+	color: var(--secondary-txt-cl);
 }
 
 .Title {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .Film {
-  width: 40%;
+	padding: 10px;
+	max-width: 1000px;
 }
 
 @media screen and (max-width: 768px) {
-  .Info {
-    font-size: 14px;
-  }
+	.Info {
+		font-size: 14px;
+	}
 }

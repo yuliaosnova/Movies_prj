@@ -1,5 +1,10 @@
+.PlayerWrapper {
+	position: relative;
+	padding-top: 10%;
+}
+
 .Player {
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 20px;
+  left: 10px;
 }

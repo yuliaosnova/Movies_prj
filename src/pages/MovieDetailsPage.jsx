@@ -9,7 +9,6 @@ import { cutDate, setAddButtonText } from "../utils/utils";
 import { Player } from "../components/Player/Player";
 import css from "./Pages.module.css";
 
-
 const MovieDetails = () => {
   const [film, setFilm] = useState({});
   const [traillerKey, setTraillerKey] = useState("");
@@ -79,12 +78,8 @@ const MovieDetails = () => {
     if (alreadyInCollection) {
       set(ref(db, "collections/" + userId + "/" + movieId), null);
       toast("Deleted from collection");
-
     } else {
-      set(
-        ref(db, "collections/" + userId + "/" + movieId),
-        film
-      );
+      set(ref(db, "collections/" + userId + "/" + movieId), film);
       toast("Added to collection");
     }
   };
@@ -112,11 +107,10 @@ const MovieDetails = () => {
         </div>
 
         {Object.keys(film).length > 0 && (
-          <Movie film={film} year={releaseYear} />
+          <Movie film={film} year={releaseYear} traillerKey={traillerKey} />
         )}
+        <Player traillerKey={traillerKey} />
       </div>
-
-      <Player traillerKey={traillerKey} />
     </div>
   );
 };
