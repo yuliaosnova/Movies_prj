@@ -53,10 +53,12 @@ const Home = () => {
         <SimpleSlider movies={heroMoviesArr} />
       </section>
 
-      <section className={css.Section}>
-        <h2 className={css.SectionTitle}>Trending today</h2>
+      {/* <div className={css.MainContainer}> */}
+        <section className={css.Section}>
+          <h2 className={css.SectionTitle}>Trending today</h2>
           <Responsive movies={movies} genres={allGenres} />
-      </section>
+        </section>
+      {/* </div> */}
 
       <section
         style={{
@@ -65,7 +67,7 @@ const Home = () => {
         className={css.Section}
       >
         <h2 className={css.SectionTitle}>Trending this week</h2>
-          <Responsive movies={moviesForWeek} genres={allGenres} />
+        <Responsive movies={moviesForWeek} genres={allGenres} />
       </section>
 
       <section className={css.Section}>
@@ -73,7 +75,7 @@ const Home = () => {
           <h2 className={css.SectionTitle}>TOP RATED</h2>
           <MoreVideos />
         </div>
-          <Responsive movies={moviesTop} genres={allGenres} />
+        <Responsive movies={moviesTop} genres={allGenres} />
       </section>
     </>
   );

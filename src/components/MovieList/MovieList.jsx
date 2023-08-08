@@ -12,7 +12,7 @@ export default class Responsive extends Component {
       infinite: false,
       speed: 500,
       autoplay: true,
-		variableWidth: true,
+		variableWidth: false,
 		
       slidesToShow: 6,
       slidesToScroll: 2,
@@ -29,7 +29,7 @@ export default class Responsive extends Component {
         {
           breakpoint: 1300,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1,
           },
         },

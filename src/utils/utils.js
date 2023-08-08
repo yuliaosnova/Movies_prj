@@ -1,4 +1,4 @@
-//Функція, яка повертає жанр за id
+//Returns genre by id
 export function getGenre(arrow, ids) {
   let names = [];
 
@@ -48,15 +48,3 @@ export function findDispalyedGenres() {
     return 1;
   }
 }
-
-// window.addEventListener("load", footer);
-// window.addEventListener("resize", footer);
-
-//  Функція для отримання списку жанрів при маунті компонента
-//  useEffect(() => {
-//    API.fetchGenres().then((response) => {
-//      const movieGenres = response.genres;
-//      console.log("movieGenres", movieGenres);
-//      setGenres(movieGenres);
-//    });
-//  }, []);
