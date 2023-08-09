@@ -1,18 +1,25 @@
 .Form {
-  width: 450px;
+  display: flex;
+  align-items: center;
+  width: 300px;
   height: 40px;
-  background: rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
   border-radius: 3px;
-  border: 1px solid #fff;
+  border: none;
+
+  @media screen and (max-width: 768px) {
+  }
 }
 
 .Input {
-  width: 320px;
+  width: 200px;
   padding: 12px 15px;
 
   float: left;
   color: #ccc;
-  border: 0;
+  border: none;
   background-color: var(--footer-bg);
   border-radius: 3px 0 0 3px;
 }
@@ -23,29 +30,19 @@
 
 .SubmitBtn {
   float: right;
-  border: 0;
-  padding: 0;
+
   cursor: pointer;
-  height: 40px;
-  width: 100px;
+  height: 39px;
+  width: 70px;
   color: #fff;
   background-color: var(--footer-bg);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
   border-left: 1px solid #fff;
+  outline: none;
+
   border-radius: 0 3px 3px 0;
-}
-
-@media screen and (max-width: 768px) {
-  .Form {
-    width: 390px;
-  }
-
-  .Input {
-    width: 270px;
-  }
-
-  .SubmitBtn {
-    width: 90px;
-  }
 }
 
 .SubmitBtn:hover {

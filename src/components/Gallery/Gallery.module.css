@@ -1,15 +1,11 @@
 .GalleryContainer {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 20px;
+  gap: 10px;
 }
 
 .ItemContainer {
   position: relative;
-}
-
-@media screen and (max-width: 768px) {
-  .GalleryContainer {
-    justify-content: center;
-  }
 }

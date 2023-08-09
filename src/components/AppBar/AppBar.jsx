@@ -34,9 +34,9 @@ export const AppBar = () => {
 
     signInWithRedirect(auth, googleAuthProvider);
     getRedirectResult(auth)
-      .then((result) => {
+      // .then((result) => {
       //   const credential = GoogleAuthProvider.credentialFromResult(result);
-      })
+      // })
 
       .catch((error) => {
         console.log(error.message);

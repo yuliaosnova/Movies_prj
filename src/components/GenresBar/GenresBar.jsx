@@ -58,7 +58,6 @@ const GenresBar = ({ placeHolder, getFilteredValue }) => {
     return true;
   };
 
-
   return (
     <div className={css.GenresContainer}>
       <div className={css.GenresList}>
@@ -75,7 +74,7 @@ const GenresBar = ({ placeHolder, getFilteredValue }) => {
         ))}
       </div>
 
-      <div className={css.DropdownContainer}>
+      <div className={css.Dropdown}>
         <div className={css.DropdownInput} onClick={handleInputClick}>
           <div className="dropdown-selected-value">{getDisplay()}</div>
           <div className="dropdown-tools">

@@ -8,13 +8,13 @@
   transition: var(--animation);
   margin: 0 auto;
   cursor: pointer;
-}
 
 .Image {
   width: 280px;
   height: 350px;
   object-fit: cover;
   margin-bottom: 5px;
+}
 }
 
 .Link:hover {
@@ -44,9 +44,9 @@
 /* add button */
 .Button {
   position: absolute;
-  top: 0;
-  margin-top: 10px;
-  margin-left: 40px;
+  top: 10px;
+  left: 10px;
+
   background-color: black;
   color: white;
   text-decoration: none;
@@ -60,22 +60,6 @@
   width: auto;
   max-width: 32px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
   transition: var(--animation);
-
-  @media (min-width: 740px) {
-    margin-left: 55px;
-  }
-
-  @media (min-width: 769px) {
-    margin-left: 15px;
-  }
-
-  @media (min-width: 1280px) {
-    margin-left: 20px;
-  }
-
-  @media (min-width: 1600px) {
-    margin-left: 30px;
-  }
 }
 
 .Button:hover {

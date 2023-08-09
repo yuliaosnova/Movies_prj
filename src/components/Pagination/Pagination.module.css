@@ -25,11 +25,6 @@
   color: white;
 }
 
-.GalleryContainer {
-  display: flex;
-  justify-content: center;
-}
-
 @media screen and (max-width: 480px) {
 	.Pagination {
 		font-size: 14px;

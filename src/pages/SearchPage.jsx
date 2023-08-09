@@ -76,9 +76,8 @@ const SearchedMovies = () => {
 
   return (
     <div>
-      <div className={css.SearchGanresContainer}>
-        <SearchBar onSubmit={changeQuery} />
-      </div>
+      <SearchBar onSubmit={changeQuery} />
+      <GenresBar placeHolder="Others" getFilteredValue={getFilteredValue} />
 
       <ul className={css.List}>
         {moviesBySeach.map((item) => (
@@ -103,9 +102,9 @@ const SearchedMovies = () => {
       <div className={css.SerchedContainer}>
         {moviesByGenre && <Gallery movies={moviesByGenre} />}
       </div>
-		{moviesByGenre.length === 0 && moviesBySeach.length === 0  && <div className={css.Plug}></div> }
-
-      <GenresBar placeHolder="Others" getFilteredValue={getFilteredValue} />
+      {moviesByGenre.length === 0 && moviesBySeach.length === 0 && (
+        <div className={css.Plug}></div>
+      )}
 
       {showMessage && <p className={css.FailMessage}>No matching results</p>}
     </div>

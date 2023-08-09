@@ -1,6 +1,6 @@
-import MovieListItem from "../MovieListItem/MovieListItem";
 import { useGetGenresQuery } from "../../redux/genresSlice";
 import css from "./Gallery.module.css";
+import GalleryItem from "../GalleryItem/GalleryItem";
 
 export const Gallery = ({ movies }) => {
   const { data } = useGetGenresQuery();
@@ -10,7 +10,7 @@ export const Gallery = ({ movies }) => {
     <ul className={css.GalleryContainer}>
       {movies.map((item) => (
         <div className={css.ItemContainer} key={item.id}>
-          <MovieListItem
+          <GalleryItem
             movies={movies}
             allGenres={allGenres}
             genres={item.genres}

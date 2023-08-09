@@ -1,108 +1,90 @@
 .Section {
-  padding: 20px 10px 15px 15px;
+	padding: 20px 10px 15px 15px;
 }
 
 .SectionHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-/* .MainContainer {
-	margin-left: auto;
-	margin-right: auto;
-} */
-
-
+/* MovieDetail Page */
 .DetailPageContainer {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 
-  width: 100vw;
-  height: 100vh;
+	width: 100vw;
+	height: 100vh;
 }
 
 .BtnContainer {
-  display: flex;
-  gap: 20px;
-  padding: 0 10px;
+	display: flex;
+	gap: 20px;
+	padding: 0 10px;
 }
 
 .Btn {
-  background-color: var(--header-bg);
-  color: var(--secondary-txt-cl);
-  font-weight: 500;
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  padding: 8px;
+	background-color: var(--header-bg);
+	color: var(--secondary-txt-cl);
+	font-weight: 500;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 8px;
 }
 
 .InfoContainer {
-  margin-left: 10px;
-  padding-top: 20px;
+	margin-left: 10px;
+	padding-top: 20px;
 }
-
 
 /* Search page */
 .List {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-left: 15px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-left: 15px;
 }
 
 @media screen and (max-width: 760px) {
-  .List {
-    margin-top: 50px;
-  }
+	.List {
+		margin-top: 50px;
+	}
 }
 
 .ListItem:hover {
-  transform: scale(1.002);
+	transform: scale(1.002);
 }
 
 .Title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 8px;
 }
 
 .ItemInfo {
-  display: flex;
-  gap: 3px;
-  font-size: 13px;
-  color: var(--main-txt-cl);
+	display: flex;
+	gap: 3px;
+	font-size: 13px;
+	color: var(--main-txt-cl);
 }
 
 .Date {
-  display: flex;
-  gap: 4px;
+	display: flex;
+	gap: 4px;
 }
 
 .FailMessage {
-  text-align: center;
-  font-size: 26px;
-  color: var(--secondary-txt-cl);
-}
-
-.SearchGanresContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 5px;
-
-  margin: 10px;
+	text-align: center;
+	font-size: 26px;
+	color: var(--secondary-txt-cl);
 }
 
 /* My collectionPage */
 .UnauthorizeMessage {
 	text-align: center;
 	margin-top: 20px;
-	
+
 	font-size: 20px;
 }

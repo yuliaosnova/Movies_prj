@@ -52,13 +52,10 @@ const Home = () => {
       <section className="Hero">
         <SimpleSlider movies={heroMoviesArr} />
       </section>
-
-      {/* <div className={css.MainContainer}> */}
-        <section className={css.Section}>
-          <h2 className={css.SectionTitle}>Trending today</h2>
-          <Responsive movies={movies} genres={allGenres} />
-        </section>
-      {/* </div> */}
+      <section className={css.Section}>
+        <h2 className={css.SectionTitle}>Trending today</h2>
+        <Responsive movies={movies} genres={allGenres} />
+      </section>
 
       <section
         style={{

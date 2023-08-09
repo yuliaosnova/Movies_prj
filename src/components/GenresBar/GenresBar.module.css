@@ -1,28 +1,17 @@
 .GenresContainer {
   position: absolute;
-  top: 66px;
-  right: 100px;
-
+  z-index: 10;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
-  gap: 10px;
-
+  margin-left: 20px;
   font-size: 17px;
   color: var(--secondary-txt-cl);
+
+  @media screen and (min-width: 760px) {
+    left: 340px;
+    top: 66px;
+  }
 }
-
-@media screen and (max-width: 850px) {
-	.GenresContainer {
-		right: 5px;
-	}
- }
-
- @media screen and (max-width: 760px) {
-	.GenresContainer {
-		top: 115px;
-	}
- }
 
 .GenresList {
   display: flex;
@@ -34,12 +23,12 @@
 .Genre {
   background-color: var(--footer-bg);
   padding: 8px;
+  border-radius: 3px;
 }
 
 .GenreSelected {
   background-color: var(--footer-bg);
   padding: 8px;
-
   background-color: var(--accent-cl);
   color: var(--main-txt-cl);
 }
@@ -52,14 +41,13 @@
   padding: 8px;
   border: none;
   outline: none;
-
+  border-radius: 3px;
   display: flex;
-  margin: 0;
+  margin-left: 10px;
   align-items: center;
   justify-content: space-between;
   user-select: none;
   width: 150px;
-
   background-color: var(--footer-bg);
 }
 
@@ -67,7 +55,7 @@
   z-index: 10;
   width: 165px;
   height: 300px;
-
+  margin-left: 10px;
   transition: var(--animation);
   border: 1px solid var(--accent-cl);
   overflow: auto;
@@ -89,7 +77,6 @@
 .DropdownItemSelected {
   padding: 5px;
   cursor: pointer;
-
   background-color: var(--accent-cl);
   color: var(--main-txt-cl);
 }

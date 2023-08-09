@@ -17,9 +17,7 @@ export function PaginatedItems({
 
   return (
     <>
-      <div className={css.GalleryContainer}>
-        <Gallery movies={data} location={location} />
-      </div>
+      <Gallery movies={data} location={location} />
 
       <ReactPaginate
         breakLabel="..."
