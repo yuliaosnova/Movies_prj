@@ -2,25 +2,32 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 11px;
+
+	@media screen and (min-width: 768px) {
+		font-size: 14px;
+	 }
+  
+	 @media screen and (min-width: 1280px) {
+		font-size: 16px;
+	 }
 }
 
 .UserName{
 	color: rgb(250, 165, 250);
 	font-weight: 600;
+	font-size: inherit;
 }
 
 .EnterBtn {
 	font-size: 14px;
+	font-size: inherit;
 	text-transform: uppercase;
-	display: flex;
-	align-items: center;
 	padding: 18px 16px;
-
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
-
 	background-color: transparent;
 	border: none;
 	color: var(--secondary-txt-cl);
