@@ -1,6 +1,6 @@
 .GenresContainer {
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   align-items: flex-start;
   margin-left: 20px;
@@ -52,7 +52,7 @@
 }
 
 .DropdownMenu {
-  z-index: 10;
+  z-index: 2;
   width: 165px;
   height: 300px;
   margin-left: 10px;
