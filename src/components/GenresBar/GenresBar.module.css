@@ -24,6 +24,7 @@
   background-color: var(--footer-bg);
   padding: 8px;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .GenreSelected {
@@ -49,6 +50,7 @@
   user-select: none;
   width: 150px;
   background-color: var(--footer-bg);
+  cursor: pointer;
 }
 
 .DropdownMenu {
