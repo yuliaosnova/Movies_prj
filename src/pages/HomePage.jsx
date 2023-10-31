@@ -36,7 +36,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    API.fetchTopRatedMovies()
+    API.fetchTopRatedMovies(1)
       .then((response) => {
         setMoviesTop(response.results);
       })
